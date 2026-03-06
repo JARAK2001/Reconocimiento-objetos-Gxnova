@@ -23,6 +23,12 @@ WORKDIR /app
 
 # Copiar el archivo de requerimientos e instalar dependencias de Python
 COPY requirements.txt .
+# Instalar PyTorch CPU-only primero (evita descargar versión CUDA ~2-3 GB)
+RUN pip install --no-cache-dir \
+    torch==2.2.2+cpu \
+    torchvision==0.17.2+cpu \
+    --extra-index-url https://download.pytorch.org/whl/cpu
+# Instalar el resto de dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar el resto del código de la aplicación

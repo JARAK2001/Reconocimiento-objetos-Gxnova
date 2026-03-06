@@ -16,11 +16,23 @@ coverage.xml
 *.cover
 .hypothesis/
 .pytest_cache/
-# *.pt
-# *.onnx
-datasets/
-# runs/
+# Excluir modelos YOLO extra — solo conservar el que usas en producción
+yolo11s.pt
+yolov8n.pt
+# Excluir resultados de entrenamiento (pesados e innecesarios en prod)
+runs/
+# Excluir archivos de desarrollo
 .git/
 .gitignore
 .vscode/
-yolo-client/node_modules/
+yolo-client/
+# Excluir datos de entrenamiento
+Certificados-1/
+Diplomas-3/
+datasets/
+download_dataset.py
+train_licencia.py
+app2.py
+webrtc_app.py
+package.json
+package-lock.json
