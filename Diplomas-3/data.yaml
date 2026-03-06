@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 6
+names: ['bachillerato', 'diploma', 'escudo', 'firma', 'institucion', 'nombre']
+
+roboflow:
+  workspace: jhoels-workspace
+  project: diplomas-a5gqs
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/jhoels-workspace/diplomas-a5gqs/dataset/3

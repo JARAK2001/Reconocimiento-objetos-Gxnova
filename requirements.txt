@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pillow
+torch
+numpy
+python-multipart
+roboflow
+python-dotenv
+ultralytics
+easyocr
+opencv-python-headless

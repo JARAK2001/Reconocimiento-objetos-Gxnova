@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 6
+names: ['certificado', 'escudo de colombia', 'firma', 'institucion', 'nombre', 'titulo']
+
+roboflow:
+  workspace: jhoels-workspace
+  project: certificados-w2fcc
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/jhoels-workspace/certificados-w2fcc/dataset/1
