@@ -19,8 +19,10 @@ coverage.xml
 # Excluir modelos YOLO extra — solo conservar el que usas en producción
 yolo11s.pt
 yolov8n.pt
-# Excluir resultados de entrenamiento (pesados e innecesarios en prod)
-runs/
+# Excluir resultados de entrenamiento intermedios (pesados e innecesarios en prod)
+# NO excluimos runs/ completo porque los pesos best.pt son necesarios en produccion
+runs/detect/train/
+runs/detect/certificados_v1/
 # Excluir archivos de desarrollo
 .git/
 .gitignore
@@ -28,7 +30,7 @@ runs/
 yolo-client/
 # Excluir datos de entrenamiento
 Certificados-1/
-Diplomas-3/
+# NO excluimos Diplomas-3/ porque contiene el modelo del diploma en produccion
 datasets/
 download_dataset.py
 train_licencia.py
