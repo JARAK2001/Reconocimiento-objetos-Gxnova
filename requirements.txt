@@ -1,9 +1,9 @@
 fastapi
 uvicorn[standard]
 pillow
-numpy<2.0
+numpy==1.26.4
 python-multipart
 python-dotenv
 ultralytics
 easyocr
-opencv-python-headless
+opencv-python-headless==4.9.0.80
