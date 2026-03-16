@@ -23,12 +23,16 @@ WORKDIR /app
 
 # Copiar el archivo de requerimientos e instalar dependencias de Python
 COPY requirements.txt .
-# Instalar PyTorch CPU-only primero (evita descargar versión CUDA ~2-3 GB)
+# Actualizar pip
+RUN pip install --no-cache-dir --upgrade pip
+# 1. Instalar numpy PRIMERO y de forma aislada para evitar que sea sobreescrito
+RUN pip install --no-cache-dir "numpy==1.26.4"
+# 2. Instalar PyTorch CPU-only (evita descargar versión CUDA ~2-3 GB)
 RUN pip install --no-cache-dir \
     torch==2.2.2+cpu \
     torchvision==0.17.2+cpu \
     --extra-index-url https://download.pytorch.org/whl/cpu
-# Instalar el resto de dependencias
+# 3. Instalar el resto de dependencias (numpy ya está fijado, no se sobreescribirá)
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar el resto del código de la aplicación
